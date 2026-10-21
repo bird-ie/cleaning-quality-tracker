@@ -19,8 +19,10 @@ define( 'CQT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CQT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 require_once CQT_PLUGIN_DIR . 'includes/class-cqt-post-types.php';
+require_once CQT_PLUGIN_DIR . 'includes/class-cqt-checklist-meta.php';
 
 function cqt_run_plugin() {
 	CQT_Post_Types::init();
+	CQT_Checklist_Meta::init();
 }
 add_action( 'plugins_loaded', 'cqt_run_plugin' );
